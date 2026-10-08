@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<title>온라인 프로필</title>
+	<meta charset="utf-8">
+    <style>
+        #wrap {
+            width: 950px;
+            margin: 20px auto;
+        }
+        #header {
+            width : 950px;
+            height: 200px;
+            border : 1px solid #ccc;
+
+        }
+
+        #header img{
+            width: 950px;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        #container{
+            width: 300px;
+            height: 802px;
+            background-color: rgb(163, 163, 170);
+            float : left;
+            color : white;
+            text-align: center;
+            
+        }
+        
+        #main{
+            border : 1px solid #ccc;
+            width: 600px;
+            height: 800px;
+            margin-left: 300px;
+            padding-left: 50px;
+            box-shadow: 2px 2px 15px #ccc;
+
+        }
+
+        #namecard img{
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            border: 3px solid white;
+            margin: 50px auto;
+          
+        }
+        .namecard{
+            width: 300px;
+            margin : 50px auto;
+            
+        }
+
+        .subtitle {
+            border-left: 5px solid rgb(85, 127, 189);
+            padding-left: 10px;
+        }
+
+        .sns-icons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .sns-icons img {
+            width: 40px;
+            height: 40px;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        .sns-icons img:hover {
+            transform: scale(1.1);
+        }
+
+        table, tr, th, td{
+            width: 550px;
+            border : 2px solid black;
+            border-collapse: collapse ;
+            padding: 5px 10px;
+            text-align: center;
+            
+        }
+        th{
+            background-color: rgb(163, 163, 170);
+        }
+
+
+
+    </style>
+  
+</head>
+
+<body>
+    <div id="wrap">
+
+        <div id="header">
+            <img src="noname_13-texture-1893788_1920.jpg" alt="">
+        </div>
+
+
+
+
+        <div id="container">
+            <!-- 사이드바 -->
+            <aside>
+                <div id="namecard">
+                    <img src="1296520_1260770_2756.jpg" alt="">
+                    <h1>Park Hye Jin</h1>    
+                    <p>프로그래밍 재밌다</p>
+                </div>
+                <div id="detail">
+                    <p>📍Incheon, Korea</p>
+                    <p>📍test@naver.com</p>                                 
+                </div>
+                <div id="sns">
+                    <h2>SNS</h2>
+
+
+                <div class="sns-icons">
+                    <a href="https://naver.com" target="_blank">
+                        <img src="ivke32-icon-1379228_1920.png" alt="인스타그램">
+                    </a>
+
+                    <a href="https://naver.com" target="_blank">
+                        <img src="ivke32-email-1435687_1920.png" alt="깃허브">
+                    </a>
+
+                    <a href="https://naver.com" target="_blank">
+                        <img src="ivke32-icon-1435485_1920.png" alt="유튜브">
+                    </a>
+                    </div>
+                    </div>
+                    </aside>
+
+
+        </div>
+
+
+        <div id="main">
+                <section>
+                    <h2 class="subtitle">자기소개</h2>
+                    <p><mark>프로그래밍</mark>에 관심이 많습니다. <br>현재 열심히 공부하며 코딩 중!</p>
+                </section>
+
+                <!-- 경력 -->
+                <section>
+                    <h2 class="subtitle">Experience</h2>
+                    <ul>
+                        <li>프론트엔드
+                            <ul>
+                                <li>HTML/CSS/JAVASCRIPT </li>
+                                <li>웹 페이지 만든다 </li>
+                                <li>다 잘함</li> 
+                            </ul>
+                        </li>
+                        <li>백엔드
+                            <ul>
+                                <li>자바 잘함 </li>
+                                <li>오라클 더 잘함</li>
+                            </ul>                        
+                        </li>
+                    </ul>             
+                </section>
+
+                <!-- 숙련도 -->
+                <section>
+                    <h2 class="subtitle">보유 기술</h2>
+                    <li style="list-style: none;"> 
+                        <ul>
+                            <li>자바 </li>
+                            <li>오라클</li>
+                        </ul>                        
+                    </li>
+                </section>
+
+                <!-- 학력 -->
+                <section>
+                    <h2 class="subtitle">Education</h2>
+                    <table>
+                    <caption>학력 사항</caption>
+                    <thead>
+                        <tr>
+                            <th>출신학교</th>
+                            <th>전공</th>
+                            <th>기간</th>
+                            <th>구분</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>좋은대학교</td>
+                            <td>좋은학과</td>
+                            <td>2010.3 ~ 2013.2</td>
+                            <td>졸업</td>
+                        </tr>
+                        <tr>
+                            <td> - </td>
+                            <td>2007.3 ~ 2009.2</td>
+                            <td>졸업</td>
+                        </tr>
+                    </tbody>
+                    </table>
+                </section>
+        </div>        
+    </div>
+</body>
+</html>
