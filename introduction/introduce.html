@@ -1,213 +1,361 @@
-<!doctype html>
+
+<!DOCTYPE html>
 <html lang="ko">
 <head>
-	<title>온라인 프로필</title>
-	<meta charset="utf-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>온라인 프로필</title>
+
     <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 40px 20px;
+            font-family: "Noto Sans KR", Arial, sans-serif;
+            background-color: #f3f5f9;
+            color: #333;
+            line-height: 1.7;
+        }
+
+        /* 전체 레이아웃 */
         #wrap {
-            width: 950px;
-            margin: 20px auto;
-        }
-        #header {
-            width : 950px;
-            height: 200px;
-            border : 1px solid #ccc;
-
-        }
-
-        #header img{
-            width: 950px;
-            height: 200px;
-            object-fit: cover;
+            display: flex;
+            max-width: 1000px;
+            margin: 0 auto;
+            background-color: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
         }
 
-        #container{
-            width: 300px;
-            height: 802px;
-            background-color: rgb(163, 163, 170);
-            float : left;
-            color : white;
+        /* 왼쪽 프로필 */
+        #container {
+            flex: 0 0 300px;
+            padding: 40px 25px;
+            background-color: #34445c;
+            color: white;
             text-align: center;
-            
-        }
-        
-        #main{
-            border : 1px solid #ccc;
-            width: 600px;
-            height: 800px;
-            margin-left: 300px;
-            padding-left: 50px;
-            box-shadow: 2px 2px 15px #ccc;
-
         }
 
-        #namecard img{
-            width: 200px;
-            height: 200px;
+        #namecard img {
+            width: 170px;
+            height: 170px;
+            object-fit: cover;
             border-radius: 50%;
-            border: 3px solid white;
-            margin: 50px auto;
-          
+            border: 5px solid white;
+            margin-bottom: 15px;
         }
-        .namecard{
-            width: 300px;
-            margin : 50px auto;
-            
+
+        #namecard h1 {
+            margin: 0;
+            font-size: 25px;
+        }
+
+        #namecard p {
+            margin-top: 8px;
+            color: #d8e1ef;
+        }
+
+        #detail {
+            margin-top: 30px;
+            padding: 15px 0;
+            border-top: 1px solid #617087;
+            border-bottom: 1px solid #617087;
+            font-size: 14px;
+            overflow-wrap: anywhere;
+        }
+
+        #detail p {
+            margin: 10px 0;
+        }
+
+        /* SNS */
+        #sns {
+            margin-top: 25px;
+        }
+
+        #sns h2 {
+            font-size: 18px;
+            margin-bottom: 12px;
+        }
+
+        .sns-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .sns-links a {
+            padding: 6px 12px;
+            border: 1px solid #8290a5;
+            border-radius: 20px;
+            color: white;
+            text-decoration: none;
+            font-size: 13px;
+            transition: 0.2s;
+        }
+
+        .sns-links a:hover {
+            background-color: white;
+            color: #34445c;
+        }
+
+        /* 오른쪽 본문 */
+        #main {
+            flex: 1;
+            min-width: 0;
+            padding: 35px 40px;
+        }
+
+        section {
+            margin-bottom: 32px;
         }
 
         .subtitle {
-            border-left: 5px solid rgb(85, 127, 189);
-            padding-left: 10px;
+            margin: 0 0 15px;
+            padding-left: 12px;
+            border-left: 4px solid #5878ad;
+            color: #263750;
+            font-size: 21px;
         }
 
-        .sns-icons {
+        section p {
+            margin: 8px 0;
+        }
+
+        ul {
+            padding-left: 22px;
+        }
+
+        li {
+            margin-bottom: 5px;
+        }
+
+        section ul ul {
+            margin-top: 5px;
+            color: #606978;
+        }
+
+        mark {
+            background-color: #e5edff;
+            color: #315b9b;
+            padding: 2px 5px;
+            border-radius: 4px;
+        }
+
+        /* 기술 목록 */
+        .skills {
             display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin-top: 15px;
+            flex-wrap: wrap;
+            gap: 10px;
+            padding: 0;
+            list-style: none;
         }
 
-        .sns-icons img {
-            width: 40px;
-            height: 40px;
-            object-fit: cover;
-            border-radius: 50%;
+        .skills li {
+            margin: 0;
+            padding: 6px 15px;
+            background-color: #edf2fa;
+            color: #344e76;
+            border-radius: 6px;
+            font-size: 14px;
         }
 
-        .sns-icons img:hover {
-            transform: scale(1.1);
+        /* 학력 테이블 */
+        .table-wrap {
+            width: 100%;
+            overflow-x: auto;
         }
 
-        table, tr, th, td{
-            width: 550px;
-            border : 2px solid black;
-            border-collapse: collapse ;
-            padding: 5px 10px;
+        table {
+            width: 100%;
+            min-width: 420px;
+            border-collapse: collapse;
+            font-size: 13px;
             text-align: center;
-            
-        }
-        th{
-            background-color: rgb(163, 163, 170);
         }
 
+        caption {
+            padding: 8px;
+            color: #777;
+            caption-side: top;
+        }
 
+        th, td {
+            padding: 10px 8px;
+            border: 1px solid #dce1e8;
+        }
 
+        th {
+            background-color: #edf2fa;
+            color: #34445c;
+        }
+
+        tbody tr:hover {
+            background-color: #f7f9fc;
+        }
+
+        /* 모바일 화면 */
+        @media (max-width: 700px) {
+            body {
+                padding: 20px 12px;
+            }
+
+            #wrap {
+                flex-direction: column;
+            }
+
+            #container {
+                flex-basis: auto;
+                padding: 30px 20px;
+            }
+
+            #namecard img {
+                width: 140px;
+                height: 140px;
+            }
+
+            #main {
+                padding: 30px 22px;
+            }
+
+            .subtitle {
+                font-size: 19px;
+            }
+        }
     </style>
-  
 </head>
 
 <body>
     <div id="wrap">
 
-        <div id="header">
-            <img src="noname_13-texture-1893788_1920.jpg" alt="">
-        </div>
+        <!-- 왼쪽 프로필 -->
+        <aside id="container">
 
+            <div id="namecard">
+                <img src="../images/1296520_1260770_2756.jpg" alt="사진">
 
+                <h1>Park Hye Jin</h1>
+                <p>프로그래밍 재밌다 🐾</p>
+            </div>
 
+            <div id="detail">
+                <p>📍 Incheon, Korea</p>
+                <p>✉️ test@naver.com</p>
+            </div>
 
-        <div id="container">
-            <!-- 사이드바 -->
-            <aside>
-                <div id="namecard">
-                    <img src="1296520_1260770_2756.jpg" alt="">
-                    <h1>Park Hye Jin</h1>    
-                    <p>프로그래밍 재밌다</p>
+            <div id="sns">
+                <h2>SNS</h2>
+
+                <div class="sns-links">
+                    <a href="https://www.instagram.com/"
+                       target="_blank"
+                       rel="noopener noreferrer">Instagram</a>
+
+                    <a href="https://github.com/"
+                       target="_blank"
+                       rel="noopener noreferrer">GitHub</a>
+
+                    <a href="https://www.youtube.com/"
+                       target="_blank"
+                       rel="noopener noreferrer">YouTube</a>
                 </div>
-                <div id="detail">
-                    <p>📍Incheon, Korea</p>
-                    <p>📍test@naver.com</p>                                 
-                </div>
-                <div id="sns">
-                    <h2>SNS</h2>
+            </div>
 
+        </aside>
 
-                <div class="sns-icons">
-                    <a href="https://naver.com" target="_blank">
-                        <img src="ivke32-icon-1379228_1920.png" alt="인스타그램">
-                    </a>
+        <!-- 오른쪽 본문 -->
+        <main id="main">
 
-                    <a href="https://naver.com" target="_blank">
-                        <img src="ivke32-email-1435687_1920.png" alt="깃허브">
-                    </a>
+           
+            <section>
+                <h2 class="subtitle">자기소개</h2>
 
-                    <a href="https://naver.com" target="_blank">
-                        <img src="ivke32-icon-1435485_1920.png" alt="유튜브">
-                    </a>
-                    </div>
-                    </div>
-                    </aside>
+                <p>
+                    <mark>프로그래밍</mark>에 관심이 많습니다.<br>
+                    현재 열심히 공부하며 코딩 중!
+                </p>
+            </section>
 
+            
+            <section>
+                <h2 class="subtitle">Experience</h2>
 
-        </div>
-
-
-        <div id="main">
-                <section>
-                    <h2 class="subtitle">자기소개</h2>
-                    <p><mark>프로그래밍</mark>에 관심이 많습니다. <br>현재 열심히 공부하며 코딩 중!</p>
-                </section>
-
-                <!-- 경력 -->
-                <section>
-                    <h2 class="subtitle">Experience</h2>
-                    <ul>
-                        <li>프론트엔드
-                            <ul>
-                                <li>HTML/CSS/JAVASCRIPT </li>
-                                <li>웹 페이지 만든다 </li>
-                                <li>다 잘함</li> 
-                            </ul>
-                        </li>
-                        <li>백엔드
-                            <ul>
-                                <li>자바 잘함 </li>
-                                <li>오라클 더 잘함</li>
-                            </ul>                        
-                        </li>
-                    </ul>             
-                </section>
-
-                <!-- 숙련도 -->
-                <section>
-                    <h2 class="subtitle">보유 기술</h2>
-                    <li style="list-style: none;"> 
+                <ul>
+                    <li>
+                        <strong>프론트엔드</strong>
                         <ul>
-                            <li>자바 </li>
-                            <li>오라클</li>
-                        </ul>                        
+                            <li>HTML / CSS / JavaScript</li>
+                            <li>웹 페이지 제작</li>
+                            <li>사용자 친화적인 화면 구성</li>
+                        </ul>
                     </li>
-                </section>
 
-                <!-- 학력 -->
-                <section>
-                    <h2 class="subtitle">Education</h2>
+                    <li>
+                        <strong>백엔드</strong>
+                        <ul>
+                            <li>Java 프로그래밍</li>
+                            <li>Oracle 데이터베이스</li>
+                        </ul>
+                    </li>
+                </ul>
+            </section>
+
+            
+            <section>
+                <h2 class="subtitle">보유 기술</h2>
+
+                <ul class="skills">
+                    <li>Java</li>
+                    <li>Oracle</li>
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>JavaScript</li>
+                </ul>
+            </section>
+
+            <!-- 학력 -->
+            <section>
+                <h2 class="subtitle">Education</h2>
+
+                <div class="table-wrap">
                     <table>
-                    <caption>학력 사항</caption>
-                    <thead>
-                        <tr>
-                            <th>출신학교</th>
-                            <th>전공</th>
-                            <th>기간</th>
-                            <th>구분</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>좋은대학교</td>
-                            <td>좋은학과</td>
-                            <td>2010.3 ~ 2013.2</td>
-                            <td>졸업</td>
-                        </tr>
-                        <tr>
-                            <td> - </td>
-                            <td>2007.3 ~ 2009.2</td>
-                            <td>졸업</td>
-                        </tr>
-                    </tbody>
+                        <caption>학력 사항</caption>
+
+                        <thead>
+                            <tr>
+                                <th>출신학교</th>
+                                <th>전공</th>
+                                <th>기간</th>
+                                <th>구분</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>좋은대학교</td>
+                                <td>좋은학과</td>
+                                <td>2010.3 ~ 2013.2</td>
+                                <td>졸업</td>
+                            </tr>
+
+                            <tr>
+                                <td>좋은학교</td>
+                                <td>좋은학과</td>
+                                <td>2007.3 ~ 2009.2</td>
+                                <td>졸업</td>
+                            </tr>
+                        </tbody>
                     </table>
-                </section>
-        </div>        
+                </div>
+            </section>
+
+        </main>
+
     </div>
 </body>
 </html>
