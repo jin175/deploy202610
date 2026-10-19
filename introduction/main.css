@@ -1,0 +1,136 @@
+
+* {
+    box-sizing: border-box;
+}
+
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: #101116;
+    color: #f5f5f7;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+}
+
+#app {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    
+}
+
+.top {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    padding: 30px 8%;
+}
+
+.logo {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.logo span {
+    color: #a99cff;
+}
+
+.clock {
+    color: #c4bfdc;
+    font-size: 13px;
+}
+
+.hero {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: min(850px, 84%);
+    margin: 0 auto;
+    padding: 50px 20px;
+    text-align: center;
+   
+}
+
+.eyebrow {
+    color: #a99cff;
+    font-size: 12px;
+    letter-spacing: 3px;
+}
+
+.hero h1 {
+    font-size: 26px;
+    line-height: 1.4;
+    letter-spacing: -1px;
+    margin: 20px 0;
+}
+
+.hero h1 span {
+    color: #a99cff;
+}
+
+.desc {
+    color: #aaa9b8;
+    line-height: 1.9;
+    font-size: 15px;
+}
+
+.enter-btn {
+    margin-top: 30px;
+    padding: 17px 25px;
+    border: 1px solid #a99cff;
+    border-radius: 6px;
+    background: transparent;
+    color: white;
+    font-size: 12px;
+    cursor: pointer;
+    
+}
+
+.enter-btn span {
+    margin-left: 18px;
+    font-size: 18px;
+}
+
+.enter-btn:hover {
+    background: #a99cff;
+    color: #101116;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px #a99cff33;
+}
+
+
+
+footer {
+    display: flex;
+    justify-content: center;
+    padding: 25px 8%;
+    border-top: 1px solid #ffffff15;
+    color: #777687;
+    font-size: 10px;
+}
+
+
+.bounce-i {
+    display: inline-block;
+    color: #a99cff;
+    animation: softRise 0.9s ease-out both;
+    animation-delay: 0.5s;
+}
+
+
+@keyframes softRise {
+    from {
+        opacity: 0;
+        transform: translateY(7px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

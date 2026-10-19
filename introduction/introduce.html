@@ -6,228 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>온라인 프로필</title>
 
-    <style>
-        * {
-            box-sizing: border-box;
-        }
 
-        body {
-            margin: 0;
-            padding: 40px 20px;
-            font-family: "Noto Sans KR", Arial, sans-serif;
-            background-color: #f3f5f9;
-            color: #333;
-            line-height: 1.7;
-        }
-
-        /* 전체 레이아웃 */
-        #wrap {
-            display: flex;
-            max-width: 1000px;
-            margin: 0 auto;
-            background-color: white;
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
-        }
-
-        /* 왼쪽 프로필 */
-        #container {
-            flex: 0 0 300px;
-            padding: 40px 25px;
-            background-color: #34445c;
-            color: white;
-            text-align: center;
-        }
-
-        #namecard img {
-            width: 170px;
-            height: 170px;
-            object-fit: cover;
-            border-radius: 50%;
-            border: 5px solid white;
-            margin-bottom: 15px;
-        }
-
-        #namecard h1 {
-            margin: 0;
-            font-size: 25px;
-        }
-
-        #namecard p {
-            margin-top: 8px;
-            color: #d8e1ef;
-        }
-
-        #detail {
-            margin-top: 30px;
-            padding: 15px 0;
-            border-top: 1px solid #617087;
-            border-bottom: 1px solid #617087;
-            font-size: 14px;
-            overflow-wrap: anywhere;
-        }
-
-        #detail p {
-            margin: 10px 0;
-        }
-
-        /* SNS */
-        #sns {
-            margin-top: 25px;
-        }
-
-        #sns h2 {
-            font-size: 18px;
-            margin-bottom: 12px;
-        }
-
-        .sns-links {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-
-        .sns-links a {
-            padding: 6px 12px;
-            border: 1px solid #8290a5;
-            border-radius: 20px;
-            color: white;
-            text-decoration: none;
-            font-size: 13px;
-            transition: 0.2s;
-        }
-
-        .sns-links a:hover {
-            background-color: white;
-            color: #34445c;
-        }
-
-        /* 오른쪽 본문 */
-        #main {
-            flex: 1;
-            min-width: 0;
-            padding: 35px 40px;
-        }
-
-        section {
-            margin-bottom: 32px;
-        }
-
-        .subtitle {
-            margin: 0 0 15px;
-            padding-left: 12px;
-            border-left: 4px solid #5878ad;
-            color: #263750;
-            font-size: 21px;
-        }
-
-        section p {
-            margin: 8px 0;
-        }
-
-        ul {
-            padding-left: 22px;
-        }
-
-        li {
-            margin-bottom: 5px;
-        }
-
-        section ul ul {
-            margin-top: 5px;
-            color: #606978;
-        }
-
-        mark {
-            background-color: #e5edff;
-            color: #315b9b;
-            padding: 2px 5px;
-            border-radius: 4px;
-        }
-
-        /* 기술 목록 */
-        .skills {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            padding: 0;
-            list-style: none;
-        }
-
-        .skills li {
-            margin: 0;
-            padding: 6px 15px;
-            background-color: #edf2fa;
-            color: #344e76;
-            border-radius: 6px;
-            font-size: 14px;
-        }
-
-        /* 학력 테이블 */
-        .table-wrap {
-            width: 100%;
-            overflow-x: auto;
-        }
-
-        table {
-            width: 100%;
-            min-width: 420px;
-            border-collapse: collapse;
-            font-size: 13px;
-            text-align: center;
-        }
-
-        caption {
-            padding: 8px;
-            color: #777;
-            caption-side: top;
-        }
-
-        th, td {
-            padding: 10px 8px;
-            border: 1px solid #dce1e8;
-        }
-
-        th {
-            background-color: #edf2fa;
-            color: #34445c;
-        }
-
-        tbody tr:hover {
-            background-color: #f7f9fc;
-        }
-
-        /* 모바일 화면 */
-        @media (max-width: 700px) {
-            body {
-                padding: 20px 12px;
-            }
-
-            #wrap {
-                flex-direction: column;
-            }
-
-            #container {
-                flex-basis: auto;
-                padding: 30px 20px;
-            }
-
-            #namecard img {
-                width: 140px;
-                height: 140px;
-            }
-
-            #main {
-                padding: 30px 22px;
-            }
-
-            .subtitle {
-                font-size: 19px;
-            }
-        }
-    </style>
 </head>
 
 <body>
@@ -236,11 +15,12 @@
         <!-- 왼쪽 프로필 -->
         <aside id="container">
 
+            
             <div id="namecard">
-                <img src="../images/1296520_1260770_2756.jpg" alt="사진">
-
+                
+                <div class="box"></div>
                 <h1>Park Hye Jin</h1>
-                <p>프로그래밍 재밌다 🐾</p>
+                <p>프로그래밍 어렵다</p>
             </div>
 
             <div id="detail">
@@ -266,6 +46,14 @@
                 </div>
             </div>
 
+
+            <div class="card">
+                
+                <div class="rotate-turn">⭐</div>
+                
+                
+            </div>
+
         </aside>
 
         <!-- 오른쪽 본문 -->
@@ -276,7 +64,7 @@
                 <h2 class="subtitle">자기소개</h2>
 
                 <p>
-                    <mark>프로그래밍</mark>에 관심이 많습니다.<br>
+                    <mark>프로그래밍</mark>에 관심이 있습니다.<br>
                     현재 열심히 공부하며 코딩 중!
                 </p>
             </section>
@@ -359,3 +147,7 @@
     </div>
 </body>
 </html>
+
+
+<link rel="stylesheet" href="style.css">
+<a href="index.html" class="home-btn">← 메인으로 돌아가기</a>
