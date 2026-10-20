@@ -49,10 +49,20 @@
 
             <div class="card">
                 
-                <div class="rotate-turn">⭐</div>
+                <div class="rotate-turn" id="secret-trigger">⭐</div>
                 
                 
             </div>
+
+            <div id="dday-display">D-000</div>
+
+            <!-- 히든카드 -->
+            <div class="hidden-card" id="hidden-card">
+                 🎉
+                <p>再过一个月就好</p>
+            </div>
+
+
 
         </aside>
 
@@ -145,6 +155,38 @@
         </main>
 
     </div>
+
+
+
+    <!-- 카운트다운 JavaScript -->
+    <script>
+        const endDate = new Date("2027-03-18T00:00:00").getTime();
+
+        function updateDday() {
+            const now = new Date().getTime();
+            const days = Math.max(0, Math.ceil((endDate - now) / 86400000));
+
+            document.getElementById("dday-display").textContent =
+                "D-" + String(days).padStart(3, "0");
+        }
+
+        updateDday();
+        setInterval(updateDday, 1000);
+    </script>
+
+    <script>
+    const trigger = document.getElementById("secret-trigger");
+    const hiddenCard = document.getElementById("hidden-card");
+
+    trigger.addEventListener("click", function () {
+        hiddenCard.classList.toggle("show");
+    });
+</script>
+
+
+
+
+
 </body>
 </html>
 

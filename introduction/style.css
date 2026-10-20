@@ -139,6 +139,37 @@ body {
 
 
 
+/* 히든카드 */
+#secret-trigger {
+    cursor: pointer;
+    user-select: none;
+}
+
+.hidden-card {
+    display: none;
+    margin-top: 50px;
+    padding: 15px 10px;
+    border: 1px solid #9383ca;
+    border-radius: 12px;
+    background: #454056;
+    color: #fff;
+    font-size: 13px;
+    animation: profileAppear 0.5s ease-out both;
+}
+
+.hidden-card p {
+    margin-bottom: 0;
+    color: #d0c4ff;
+    font-size: 12px;
+}
+
+.hidden-card.show {
+    display: block;
+}
+
+
+
+
 
 /* 오른쪽 본문 */
 #main {
