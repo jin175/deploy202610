@@ -311,6 +311,11 @@ th {
 }
 
 
+tbody tr:hover {
+    background: #faf8ff;
+}
+
+
 
 /* 메인 버튼 */
 .home-btn {
